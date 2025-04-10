@@ -1,3 +1,6 @@
+// API URL
+const API_URL = 'https://imobiliare-online-production.up.railway.app/api';
+
 // Mobile Navigation
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
@@ -382,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Authentication Functions
 async function registerUser(userData) {
     try {
-        const response = await fetch('http://localhost:5000/api/auth/register', {
+        const response = await fetch(`${API_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -392,7 +395,7 @@ async function registerUser(userData) {
 
         const data = await response.json();
         if (!response.ok) {
-            throw new Error(data.message);
+            throw new Error(data.message || 'Eroare la înregistrare');
         }
 
         // Store token and user data
@@ -411,7 +414,7 @@ async function registerUser(userData) {
 
 async function loginUser(credentials) {
     try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -421,7 +424,7 @@ async function loginUser(credentials) {
 
         const data = await response.json();
         if (!response.ok) {
-            throw new Error(data.message);
+            throw new Error(data.message || 'Eroare la autentificare');
         }
 
         // Store token and user data
