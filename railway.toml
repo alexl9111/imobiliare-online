@@ -13,4 +13,6 @@ restartPolicyMaxRetries = 10
 NODE_ENV = "production"
 PORT = "10000"
 FRONTEND_URL = "https://alexl9111.github.io/imobiliare-online"
-NODE_OPTIONS = "--max-old-space-size=384" 
+NODE_OPTIONS = "--max-old-space-size=384"
+MONGODB_URI = "mongodb+srv://alexlupu9111:Farad910711!@cluster0.nkuryft.mongodb.net/imobiliare?retryWrites=true&w=majority"
+JWT_SECRET = "imobiliare_online_2024_secure_key_123!" 
