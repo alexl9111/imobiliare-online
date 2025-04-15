@@ -2,14 +2,11 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy backend package files
-COPY backend/package*.json ./
+# Copy all files
+COPY . .
 
-# Install backend dependencies
-RUN npm install
-
-# Copy backend source code
-COPY backend/ ./
+# Install dependencies
+RUN cd backend && npm install
 
 # Set environment variables
 ENV NODE_ENV=production
@@ -23,4 +20,5 @@ ENV JWT_SECRET=imobiliare_online_2024_secure_key_123!
 EXPOSE 10000
 
 # Start the application
+WORKDIR /app/backend
 CMD ["node", "server.js"] 
