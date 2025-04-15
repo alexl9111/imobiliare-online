@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd backend && npm install"
+
+[deploy]
+startCommand = "cd backend && node server.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[deploy.env]
+NODE_ENV = "production"
+PORT = "10000"
+FRONTEND_URL = "https://alexl9111.github.io/imobiliare-online"
+NODE_OPTIONS = "--max-old-space-size=384" 
