@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: imobiliare-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://alexlupu9111:Farad910711!@cluster0.nkuryft.mongodb.net/imobiliare?retryWrites=true&w=majority
+      - key: JWT_SECRET
+        value: imobiliare_online_2024_secure_key_123!
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        value: https://alexl9111.github.io/imobiliare-online 
