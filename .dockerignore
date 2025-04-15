@@ -9,4 +9,6 @@ index.html
 script.js
 styles.css
 local.properties
-frontend 
+frontend
+Dockerfile
+.dockerignore 
