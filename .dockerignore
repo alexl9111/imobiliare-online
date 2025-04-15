@@ -5,4 +5,7 @@ npm-debug.log
 README.md
 .env
 *.md
-frontend 
+index.html
+script.js
+styles.css
+local.properties 

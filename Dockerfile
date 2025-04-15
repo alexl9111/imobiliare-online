@@ -2,14 +2,11 @@ FROM node:18-slim
 
 WORKDIR /app
 
-# Copy package files first
-COPY backend/package*.json ./
+# Copy all files
+COPY . .
 
 # Install dependencies with verbose output
-RUN npm install --verbose
-
-# Copy the rest of the application
-COPY backend/ ./
+RUN cd backend && npm install --verbose
 
 # Set environment variables
 ENV NODE_ENV=production
@@ -23,4 +20,5 @@ ENV JWT_SECRET=imobiliare_online_2024_secure_key_123!
 EXPOSE 10000
 
 # Start the application
+WORKDIR /app/backend
 CMD ["node", "server.js"] 
